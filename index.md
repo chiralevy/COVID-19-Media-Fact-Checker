@@ -1,6 +1,3 @@
-
-# Trained for Trust: Detecting Misinformation in Journalism and Social Media Regarding COVID-19
-
 ## Project Description
 In the year 2020, misinformation seemed to spread as quickly as the virus that had defined it. Established facts devolved into hotly debated topics and low-brow journalism had presided over the advice of experts and scientific research. Consequently, the United States is largely fragmented in their opinions toward the severity of COVID (in turn contributing to its spread) and thousands have become disillusioned with modern journalism, uncertain as to what to believe on the internet.
 
@@ -12,7 +9,3 @@ This project aims to effectively address this misinformation crisis through ***t
 - Employ "citizen science" (manual identification of fake news) in the design of the algorithm
 
 ![Image](https://ichef.bbci.co.uk/images/ic/400xn/p088bnqx.jpg)
-```
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
