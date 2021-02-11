@@ -4,7 +4,7 @@ In the year 2020, misinformation seemed to spread just as quickly as the virus t
 This project aims to effectively address this misinformation crisis through ***the restoration of trust*** in journalism and the identification of false information on social media. Using a NN classifier trained on recent and comprehensive datasets, the goal is to flag articles, specifically those shared on platforms like Facebook and WhatsApp, that either intentionally or unintentionally include untrue statements regarding COVID or COVID-related topics. To ensure accessibility, it is my hope that the end product can be accessed via a web extension and can progressively improve through continual learning.
 
 ## Tentative Goals:
-1. Use the tools of NLP to create a Long short-term neural network that can classify news within in a dataset as either fake or true
+1. Employ the tools of NLP to create a neural network (of convolutional and LSTM layers) that can classify news within in a dataset as either fake or true
 2. Extend dataset beyond just COVID related news to include fake news in general
 3. If possible: Deploy classifier as a Chrome web extension
 
