@@ -5,7 +5,7 @@ This paper/project will address what is a significant lack of oversight in quali
 
 The overall benefits to accurate fact-checking to society are obvious. For example, providing marginalized groups that have experienced significant hardship precipitated by the pandemic with accurate information to better protect themselves and their communities. However, there are also some practical societal concerns that deserve attention. One of them being the assessment of an article as truthful or not based on the speaker’s identity. For example, the system may learn to associate political elites or reputable social media accounts with high trustworthiness, which could have an unwanted effect of silencing minority voices. Ultimately, this project aims to help resurface and sharpen the line between fact and fiction in journalism and accelerate the progress to a safer and more knowledgeable society.
 
-Project Members: Chira Levy and Jorge Rodriguez
+Project Members: Chira Levy, Jorge Rodriguez, and Hussein Faara
 
 ![Image](https://ichef.bbci.co.uk/images/ic/400xn/p088bnqx.jpg)
 
