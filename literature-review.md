@@ -16,7 +16,7 @@
     
     In this paper, Schuster et al. addresses checking whether a claim is natural or synthetic (modified from its original version) and proposes methodology for debiasing Fact-Verification datasets. Schuster et al. proposes to synthesize each claim into a pair -- one that is supported and the one that is refute dby the evidence -- in order to prevent models from relying on cues from the claims. Another solution offered is  an algorithm that gives more weights to claims containing give-away phrases of the opposite label to balance out their biasing effect. 
     
-## Additional Considerations:
+## Additional Readings:
 1. Oshikawa, Ray, Jing Qian, William Yang Wang. A Survey on Natural Language Processing for Fake News Detection. In Proceedings of the 12th Language Resources and Evaluation Conference, pages 6086–6093, nov 2018. URL http://arxiv.org/abs/1811.00770.
 
 2. Thorne, James and Andreas Vlachos. Automated Fact Checking: Task Formulations, Methods and Future Directions. In Proceedings of the 27th International Conference on Computational Linguistics, pages 3346–3359, jun 2018. URL http://arxiv.org/abs/1806.07687.
