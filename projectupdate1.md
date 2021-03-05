@@ -12,7 +12,10 @@ After training the classifier on a subset of the data, we hope to create a confu
 Once we have developed something sufficient, our hope is to compare the performance of our software against a pre-existing fake news classifier trained on COVID-related news articles using similar metrics and visualizations. 
 
 ## Datasets in Consideration:
+The following datasets* will prove useful in our experiments:
 1. [COVID-19 Fake News Dataset 1](https://www.kaggle.com/arashnic/covid19-fake-news)
 2. [COVID-19 Fake News Dataset 2](https://www.kaggle.com/thesumitbanik/covid-fake-news-dataset)
+
+*Datasets subject to inspection.
 
 ![Image](https://ichef.bbci.co.uk/images/ic/400xn/p088bnqx.jpg)
