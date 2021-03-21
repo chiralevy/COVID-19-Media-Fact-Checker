@@ -1,0 +1,21 @@
+Project Update 2: 
+- Bullepoints of what we have tried so far. 
+    - Looking at the datasets to familiarize ourselves with it 
+    - Preprocess dataset
+    - Shooting for an A!!! Grill us please :D 
+    - Bare bones of the project, i.e. simple Neural Network without the more complicated hidden layers and such
+
+Methods Outline:
+- Good idea of how to complete the project:
+    - We should understand and execute the outline of our NN
+        - Adding the more complicated layers of our NN 
+        - Rerunning the python script with the additional HL on the datasets
+
+Discussion: 
+- Start outlining the results of the experiment:
+    - Not necessarily anything concrete but have a rough idea of how to critique/assess the experiments
+    - Some things to gather:
+        - Accuracy -- performance, etc. 
+        - Bias of the algorithm/data set 
+        - Complete a comparison of the performance on both data sets used
+    
