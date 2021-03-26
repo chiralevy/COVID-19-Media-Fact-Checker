@@ -25,7 +25,7 @@ Once we have developed something sufficient, our hope is to compare the performa
   of whether this is the right library to begin with is also of concern.
   
 ### Desired Grade: 
-- We are shooting for an A!!! We are open to suggestions, advice, etc.
+- We are shooting for an A. We are open to suggestions, advice, etc.
   
 ## Datasets in Consideration:
 The following datasets* will prove useful in our experiments:
