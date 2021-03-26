@@ -29,6 +29,8 @@ The following datasets* will prove useful in our experiments:
 *Datasets subject to inspection.
 
 ## Related Works
+For a more comprehensive look at the resources that inform our work, please take a look at our [literature review](literature-review.md).
+
 1. Augenstein, Isabelle, Christina Lioma, Dongsheng Wang, Lucas Chaves Lima, Casper Hansen, Christian Hansen, Jakob Grue Simonsen . MultiFC: A Real-World Multi-Domain Dataset for Evidence-Based Fact Checking of Claims. In Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP), pages 4677–4691, nov 2019. URL http://arxiv.org/abs/1909.03242.
 2. Ding, Lixuan, Lanting Ding, and Richard O. Sinnott. "Fake News Classification of Social Media Through Sentiment Analysis." International Conference on Big Data. Springer, Cham, 2020.
 3. Hamid, Abdullah, et al. "Fake News Detection in Social Media using Graph Neural Networks and NLP Techniques: A COVID-19 Use-case." arXiv preprint arXiv:2012.07517 (2020).
