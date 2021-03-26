@@ -1,3 +1,4 @@
+*Project Members: Chira Levy, Hussein Faara, Jorge Rodriguez*
 ## Introduction
 Fact-checking and fake-news detection are the task of assessing the validity, or veracity, of a claim and/or news article. It is a task that has usually been performed manually by journalists and the like. For any individual performing the task, the process of verifying whether a piece of text or a claim is accurate usually calls for the involvement of pertinent knowledge from various trustworthy sources and utilizing them to infer that something is factually supported or not. The process can be very time consuming depending on a couple of parameters: for example, the complexity of the claim/article and the evidence needed to subsstantiate the claim/article. With online news outlets being the rise, there is a growing need to fact-check and detect potential locuses of misinformation (i.e. fake news) in a more efficient way in internet circulations of information providers. 
 
@@ -42,8 +43,6 @@ For a more comprehensive look at the resources that inform our work, please refe
 8. Tan, Reuben, Kate Saenko, and Bryan A. Plummer. "Detecting Cross-Modal Inconsistency to Defend Against Neural Fake News." arXiv preprint arXiv:2009.07698 (2020). URL: https://arxiv.org/pdf/2009.07698.pdf
 9. Thorne, James and Andreas Vlachos. Automated Fact Checking: Task Formulations, Methods and Future Directions. In Proceedings of the 27th International Conference on Computational Linguistics, pages 3346–3359, jun 2018. URL http://arxiv.org/abs/1806.07687.
 10. Umer, M., Z. Imtiaz, S. Ullah, A. Mehmood, G. S. Choi and B. -W. On, "Fake News Stance Detection Using Deep Learning Architecture (CNN-LSTM)," in IEEE Access, vol. 8, pp. 156695-156706, 2020, doi: 10.1109/ACCESS.2020.3019735.
-
-Project Members: Chira Levy, Jorge Rodriguez, and Hussein Faara
 
 ![Image](https://ichef.bbci.co.uk/images/ic/400xn/p088bnqx.jpg)
 
