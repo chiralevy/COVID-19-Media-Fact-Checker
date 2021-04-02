@@ -12,6 +12,7 @@ knowledgeable society.
 
 ## Methods Discussion:
   There is a tendency in people to conceive what they read from news sources and/or social media sites to be completely true -- even if the news source admits to their mistakes retroactively. It is important to identify fake news from the real news and/or check whether claims made are valid or not -- especially during our protracted times with the SARS-COV-2 virus. This problem can be tackled with the help of Natural Language Processing tools which will aid in identifying fake or reliable news based on historical data. The following is an outline of how we plan on constructing our classifier and what data sets it will be pulling from in the training process. 
+  
   We plan to construct our classifier from scratch, with the help of libraries like Keras and Tensorflow, to ensure proper understanding of its function and to ease modifications when deemed necessary. Tentatively, the classifier will take the form of a recurrent convolutional neural network model that consists of several different types of sequential operations and layers:
 1. We will utilize a tokenizer to transform each article into a vector of indexed tokens (1 token = 1 word).
 2. Word Embedding Layers 
@@ -24,7 +25,7 @@ The following datasets will prove useful in our experiments:
 2. [COVID-19 Fake News Dataset 1](https://www.kaggle.com/arashnic/covid19-fake-news)
 3. [COVID-19 Fake News Dataset 2](https://www.kaggle.com/thesumitbanik/covid-fake-news-dataset)
 
-Our classifier will be trained on a general data set (the first linked data set above) of news articles that fall under two labels: Real or Fake. We will do some preliminary analysis using the LDA module from the Scikit-learn and the pyLDAvis library to compare topics and most significant terms in real and fake news articles. Our hope is to create an interactive visualization of the aforementioned details for both real and fake news.
+Our classifier will be trained on a general data set (the first linked data set above) of news articles that fall under two labels: Real or Fake. We will do some preliminary analysis using the LDA module from Scikit-learn and the pyLDAvis library to compare topics and most significant terms in real and fake news articles. Our hope is to create an interactive visualization of the aforementioned details for both real and fake news.
 
 After training the classifier on the general data set, we hope to extend the classifier and see how it fares with the other two data sets containing real and fake news related to SARS-COV-2. We hope to create a confusion matrix and classification report to better visualize the performance of the model. Metrics that will be useful in the assessment include precision, recall, and the f-score. 
 
