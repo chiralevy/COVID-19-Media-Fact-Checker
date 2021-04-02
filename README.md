@@ -10,25 +10,28 @@ of fake news, such as machine-generated fake news.
 The overall benefits of accurate fact-checking and fake-news detection to society are obvious. For example, providing marginalized groups that have experienced significant hardship precipitated by the pandemic with accurate information to better protect themselves and their communities. However, there are also some practical societal concerns that deserve attention. One of them being the assessment of an article as truthful or not based on the speaker’s identity. For example, the system may learn to associate political elites or reputable social media accounts with high trustworthiness, which could have an unwanted effect of silencing minority voices. Ultimately, this project aims to help resurface and sharpen the line between fact and fiction in journalism and accelerate the progress to a safer and more 
 knowledgeable society.
 
-## Our Project:
-  There is a tendency to believe for people to conceive whatever they read from news sources and/or social media sites to be completely true -- even if the news source admits to their mistakes retroactively. It is important to identify fake news form the real true news and/or check whether claims made are valid or not -- especially during our protracted times with the SARS-COV-2 virus. The problem can be tackled with  the help of Natural Language Processing tools which will aid in identifying fake or reliable news based on historical data. The following is an outline of how we plan on constructing our classifier and what data sets it will be pulling from for the training process. 
-  We plan to construct our classifier from scratch to ensure proper understanding of its function and to ease modifications when deemed necessary. Tentatively, the classifier will take the form of a recurrent convolutional neural network model that consists of several different types of sequential operations and layers:
+## Methods Discussion:
+  There is a tendency in people to conceive what they read from news sources and/or social media sites to be completely true -- even if the news source admits to their mistakes retroactively. It is important to identify fake news from the real news and/or check whether claims made are valid or not -- especially during our protracted times with the SARS-COV-2 virus. This problem can be tackled with the help of Natural Language Processing tools which will aid in identifying fake or reliable news based on historical data. The following is an outline of how we plan on constructing our classifier and what data sets it will be pulling from in the training process. 
+  We plan to construct our classifier from scratch, with the help of libraries like Keras and Tensorflow, to ensure proper understanding of its function and to ease modifications when deemed necessary. Tentatively, the classifier will take the form of a recurrent convolutional neural network model that consists of several different types of sequential operations and layers:
 1. We will utilize a tokenizer to transform each article into a vector of indexed tokens (1 token = 1 word).
 2. Word Embedding Layers 
 3. 1D convolutional and max-pooling layers.
 4. Long Short-Term Memory layers.
 
-After training the classifier on a subset of the data, we hope to create a confusion matrix and classification report to better visualize the performance of the model. Metrics that will be useful in the assessment include precision, recall, and the f-score. 
+### Datasets:
+The following datasets will prove useful in our experiments:
+1. [Fake News Data](https://www.kaggle.com/c/fake-news/data)
+2. [COVID-19 Fake News Dataset 1](https://www.kaggle.com/arashnic/covid19-fake-news)
+3. [COVID-19 Fake News Dataset 2](https://www.kaggle.com/thesumitbanik/covid-fake-news-dataset)
 
-Once we have developed something sufficient, our hope is to compare the performance of our software against a pre-existing fake news classifier trained on COVID-related news articles using similar metrics and visualizations. 
+Our classifier will be trained on a general data set (the first linked data set above) of news articles that fall under two labels: Real or Fake. We will do some preliminary analysis using the LDA module from the Scikit-learn and the pyLDAvis library to compare topics and most significant terms in real and fake news articles. Our hope is to create an interactive visualization of the aforementioned details for both real and fake news.
+
+After training the classifier on the general data set, we hope to extend the classifier and see how it fares with the other two data sets containing real and fake news related to SARS-COV-2. We hope to create a confusion matrix and classification report to better visualize the performance of the model. Metrics that will be useful in the assessment include precision, recall, and the f-score. 
+
+Once we have developed something sufficient, our hope is to compare the performance of our software against a pre-existing fake news classifier (trained on similar data sets) using similar metrics and visualizations. 
 
 ## Project Updates: 
 Keep up to date with our work through our [Project Updates page](project-updates.md)! 
-
-## Datasets:
-The following datasets will prove useful in our experiments:
-1. [COVID-19 Fake News Dataset 1](https://www.kaggle.com/arashnic/covid19-fake-news)
-2. [COVID-19 Fake News Dataset 2](https://www.kaggle.com/thesumitbanik/covid-fake-news-dataset)
 
 ## Related Works
 For a more comprehensive look at the resources that inform our work, please refer to our [literature review](literature-review.md).
