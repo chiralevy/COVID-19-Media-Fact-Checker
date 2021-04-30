@@ -1,4 +1,4 @@
-# Trained for Trust: Detecting Misinformation in COVID-related Journalism on Social Media
+# Trained for Trust: Detecting Misinformation in Journalism
 
 ## Project Description
 In the year 2020, misinformation seemed to spread just as quickly as the virus that had defined it. Established facts devolved into hotly debated topics and low-brow journalism had presided over the advice of experts and scientific research. Consequently, Americans are largely fragmented in their opinions toward the severity of COVID (in turn contributing to its spread) and thousands are disillusioned with modern journalism, uncertain as to what to believe on the internet.
