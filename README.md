@@ -23,7 +23,6 @@ From a researcher’s point of view, Vlachos and Riedel define fact-checking as 
 
 Although what an automated fact-checking system should do is intuitive, several scholars have framed it in different ways. For example, Vlachos and Riedel highlight that it is not necessarily a binary classification task because many statements are neither completely true nor completely false. As a result, some fact-checking datasets label the claims with varying veracity levels. According To Hassan et al., an ideal automated fact-checking system should not only be able to make accurate assessments, but should also be fully automated, instant, and accountable. This is a very challenging task because it requires solving the often difficult computational problems of natural language, understanding context, retrieving relevant information, and reasoning. Furthermore, an ability to explain its decision with supporting evidence from trusted sources is generally expected of any good automated fact-checking system, complicating the task even further.
 
-
 ## Methods
 There is a tendency in people to conceive what they read from news sources and/or social media sites to be completely true -- even if the news source admits to their mistakes retroactively. It is important to identify fake news from the real news and/or check whether claims made are valid or not -- especially during our protracted times with the SARS-COV-2 virus. This problem can be tackled with the help of Natural Language Processing (NLP) tools which can aid in identifying fake or reliable news based on historical data. The following is an outline of how we constructed our classifier and the datasets we utilized in the training process.
 
@@ -98,11 +97,41 @@ Assuming we chose an optimal number of topics, this visualization helped us gain
 ---
 Interestingly, we found that our real and fake articles were relatively the same in terms of topic coherence with real news at 0.42 and fake news at 0.47. In terms of perplexity, both real and fake datasets produced negative perplexity scores (-8.21 and -9.1, respectively), though our fake news set was slightly lower. One interpretation of these intrinsic evaluation metrics is that the fake news dataset is relatively more consistent given the redundant and uninventive properties of traditional fake news. These characteristics are represented in the fact that the circles that represent topics in our fake news LDA are closer together/overlap more than the topic circles in our real news dataset. Most interesting, perhaps, is that the real news is much more varied across topics, ranging from international affairs, weather-related reports, domestic and international commerce, the economy, and (of course) politics. In contrast, fake news focalized political matters which are not out-of-character with traditional fake news articles. 
 
-Our two classifiers, though having different architectures, perform relatively the same with overall recorded accuracies of 99% each. With that said, while accuracy is a useful metric to assess the performance of a classifier, it fails to tell us how the model is performing relative to each class. To have a robust understanding of our classifier's performance, we also created the following confusion matrix to understand the distribution of true positives, false positives, false negatives, and true negatives. According to their respective confusion matrices: classifier 1 misclassified 4 articles as fake news and 13 as real news. And classifier 2 misclassified 12 articles as fake news and 1 as real news.
+In order to evaluate the performance of this model effectively, we split the data into separate training, validation, and testing sets. 
+1. 56% was used for training
+2. 14% was used for validation 
+3. 30% was used for testing 
 
-In our COVID dataset(s), we ran all of the above analyses for the same reasons, save a few exceptions. One distinctive difference between our first dataset and our COVID one is that the latter only contains titles, meaning our classifier must deliberate the validity of an article title/claim using significantly less text. Another difference lies in the fact that our COVID dataset had a relatively greater imbalance between real and fake news articles. But we were able to control for this imbalance by supplementing the dataset with a COVID dataset containing only fake articles/claims until there was a balance between the real and fake articles/claims. However,  for these reasons, as was expected, we achieved different corpus and accuracy metrics.
+Our two classifiers, though having different architectures, perform relatively the same with overall recorded accuracies of 99% each. With that said, while accuracy is a useful metric to assess the performance of a classifier, it fails to tell us how the model is performing relative to each class. To have a robust understanding of our classifiers' performance, we also created confusion matrices to understand the distribution of true positives, false positives, false negatives, and true negatives. 
+
+Model 1: 
+
+![Image](https://chiralevy.github.io/cs152sp21-project/pictures/cnf1.png)
+
+Model 2:
+
+![Image](https://chiralevy.github.io/cs152sp21-project/pictures/cnf2.png)
+
+Both models had 1 false positives, meaning that they misclassified one fake news article as real news. But they differed in their numbers of false negatives. The first model had 3, meaning that it misclassified 3 real news articles as fake news. The second model on the other hand had 8 false negatives. These behaviors were reflected in our classification report, which is a report that centered around a model's performance with respect to the validation set, and it also gives us the following metrics: 
+
+* Precision — the number of times a class was correctly predicted divided by the total number of times the model predicted this class.
+* Recall — the number of times a class was correctly predicted divided by the total number of samples with that class label in the testing data.
+* F1-Score — the harmonic mean of precision and recall.
+
+Model 1:
+
+![Image](https://chiralevy.github.io/cs152sp21-project/pictures/class-rep-1.png)
+
+Model 2:
+
+![Image](https://chiralevy.github.io/cs152sp21-project/pictures/class-rep-2.png)
+
+Based on these results, we can clearly see that the models are nearly as good at detecting fake news correctly as it is at detecting real news correctly and achieved an overall accuracy of 99% on the validation data, which is pretty impressive. While the validation results can give us some indication of the model’s performance on unseen data, it is the testing set, which has not been touched at all during the model training process which provides the best objective and statistically correct measure of the model’s performance. 
+
+In our COVID dataset(s), we ran all of the above analyses for the same reasons, save a few exceptions. One distinctive difference between our first dataset and our COVID one is that the latter only contains titles, meaning our classifier must deliberate the validity of an article title/claim using significantly less text. Another difference lies in the fact that our COVID dataset had a relatively greater imbalance between real and fake news articles. But we were able to control for this imbalance by supplementing the dataset with a COVID dataset containing only fake articles/claims until there was a balance between the real and fake articles/claims. However, for these reasons, as was expected, we achieved different corpus and accuracy metrics.
 
 The coherence of the LDA model for real news was 0.48 whereas the coherence for the LDA model for fake news was 0.29. At a significantly lower level, our perplexity scores were -7.39 and -7.62, respectively. It seems that datasets centering around specific matters propose their own behaviors. This is highlighted in that the COVID-19 related datasets, the LDA models do not mimic the models for the general dataset. Perhaps this is because there is much that is yet to be studied and reported about the novel virus, enabling a more varied range of topics. 
+
 Our two models for the COVID dataset achieved an overall accuracy of 92% and 93% (classifier 1 and 2 respectively). Our distribution of true positives, false positives, false negatives, and true negatives for both models are as follows. Classifier 1 misclassified 74 articles as real news and 124 as fake news. And classifier 2 misclassified 120 articles as real news and 61 as fake news. It is quite curious how each had relatively more issues with the opposite type of news -- a repeated behavior in our iterations of rerunning the model. 
 
 In addition, we composed classification reports to provide the Precision, Recall, and F-score of our models (Figures 4, 6, 8, 10). 
