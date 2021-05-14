@@ -1,3 +1,6 @@
+## Abstract
+The recently increased focus on misinformation has stimualted research for the tasks of fact-checking and fake news classification. Research in propelling the tasks forward involve the fields of natural language processing, machine learning, knowledge presentation, databases and jounrnalism. As part of the ongoing discourse in the field, this project provides two Recurrent Convolutional Neural Networks that assesses the truthfulness of an article or claim, both achieving overall accuracies of over 90%. While the performance of our models demonstrate promise, it is wise to remember how other researchers and scholars tackle the task. As such, we also provide a discussion on relevant considerations regarding the tasks of fact-checking and fake news classification. We conclude with a discussion of some ethical considerations with the deployment of fact-checking and fake news classification systems, making suggestions and reflecting on the state of the field. 
+
 *Project Members: Chira Levy, Hussein Faara, Jorge Rodriguez*
 
 ![Image](https://ichef.bbci.co.uk/images/ic/400xn/p088bnqx.jpg)
