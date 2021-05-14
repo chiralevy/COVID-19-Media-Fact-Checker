@@ -12,6 +12,7 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 """
 # Fake News Classifier 
 This is a simple classifier. There are two options:
+
 1. General News: With this option, the classifier takes in an article and tells you if the article is fake news or not. It was trained on a data set including articles of real and fake news. 
 2. Covid News/Claims: With this option, the classifier takes in either text input about a covid claim or a covid-related news article url. Based on the claim or url, the classifier will tell you if the truthfulness of the claim/article. This classifier was trained on a data set including covid-related articles/claims.  
 
