@@ -126,17 +126,54 @@ Model 2:
 
 ![Image](https://chiralevy.github.io/cs152sp21-project/pictures/class-rep-2.png)
 
-Based on these results, we can clearly see that the models are nearly as good at detecting fake news correctly as it is at detecting real news correctly and achieved an overall accuracy of 99% on the validation data, which is pretty impressive. While the validation results can give us some indication of the model’s performance on unseen data, it is the testing set, which has not been touched at all during the model training process which provides the best objective and statistically correct measure of the model’s performance. 
+Based on these results, we can see that the models are nearly as good at detecting fake news correctly as it is at detecting real news correctly and achieved an overall accuracy of 99% on the validation data, which is pretty impressive. While the validation results can give us some indication of the model’s performance on unseen data, it is the testing set, which has not been touched at all during the model training process which provides the best objective and statistically correct measure of the model’s performance. 
 
+Model 1:
+
+![Image](https://chiralevy.github.io/cs152sp21-project/pictures/testing-1.png)
+
+Model 2:
+
+![Image](https://chiralevy.github.io/cs152sp21-project/pictures/testing-2.png)
+
+Based on these results, our models for the general dataset indicate that both models are equally adept at detecting fake news and real news, both achieving an overall accuracy of 100% -- this is truly remarkable!
+
+### Extending to COVID Dataset
 In our COVID dataset(s), we ran all of the above analyses for the same reasons, save a few exceptions. One distinctive difference between our first dataset and our COVID one is that the latter only contains titles, meaning our classifier must deliberate the validity of an article title/claim using significantly less text. Another difference lies in the fact that our COVID dataset had a relatively greater imbalance between real and fake news articles. But we were able to control for this imbalance by supplementing the dataset with a COVID dataset containing only fake articles/claims until there was a balance between the real and fake articles/claims. However, for these reasons, as was expected, we achieved different corpus and accuracy metrics.
 
 The coherence of the LDA model for real news was 0.48 whereas the coherence for the LDA model for fake news was 0.29. At a significantly lower level, our perplexity scores were -7.39 and -7.62, respectively. It seems that datasets centering around specific matters propose their own behaviors. This is highlighted in that the COVID-19 related datasets, the LDA models do not mimic the models for the general dataset. Perhaps this is because there is much that is yet to be studied and reported about the novel virus, enabling a more varied range of topics. 
 
-Our two models for the COVID dataset achieved an overall accuracy of 92% and 93% (classifier 1 and 2 respectively). Our distribution of true positives, false positives, false negatives, and true negatives for both models are as follows. Classifier 1 misclassified 74 articles as real news and 124 as fake news. And classifier 2 misclassified 120 articles as real news and 61 as fake news. It is quite curious how each had relatively more issues with the opposite type of news -- a repeated behavior in our iterations of rerunning the model. 
+Our two models for the COVID dataset achieved an overall accuracy of 92% and 93% (model 1 and model 2 respectively). Our distribution of true positives, false positives, false negatives, and true negatives for both models are as follows. 
 
-In addition, we composed classification reports to provide the Precision, Recall, and F-score of our models (Figures 4, 6, 8, 10). 
+COVID Model 1: 
 
-The results of our classifiers demonstrate promise that a trained neural network can do a fabulous job at detecting fake news, but there are a few questions raised: how does our approach fair with other documented strategies? Is the system’s performance sufficient to justify its deployment? Let's find out!
+![Image](https://chiralevy.github.io/cs152sp21-project/pictures/covid-cnf-1.png)
+
+COVID Model 2:
+
+![Image](https://chiralevy.github.io/cs152sp21-project/pictures/covid-cnf-2.png)
+
+Model 1 misclassified 33 real news articles as fake news and 247 fake news articles as real news. Conversely, model 2 misclassified 104 real news articles as fake news and 73 fake news articles as real news. It is quite curious how each had relatively more issues with the opposite type of news -- a repeated behavior in our iterations of rerunning the model. 
+
+COVID Model 1:
+
+![Image](https://chiralevy.github.io/cs152sp21-project/pictures/covid-cr-1.png)
+
+COVID Model 2:
+
+![Image](https://chiralevy.github.io/cs152sp21-project/pictures/covid-cr-2.png)
+
+Based on these results, we can see that the model is better at detecting fake news than real news. Model 2, on the other hand, is equally as good at detecting fake news correctly as it is at detecting real news correctly. This behavior with the validation data is reflected with the testing data:
+
+COVID Model 1:
+
+![Image](https://chiralevy.github.io/cs152sp21-project/pictures/covid-test-1.png)
+
+COVID Model 2:
+
+![Image](https://chiralevy.github.io/cs152sp21-project/pictures/covid-test-2.png)
+
+Both models achieved an incredible overall accuracy,  89% and 93% (model 1 and 2 respectively). So, what is clear is that the results of our classifiers demonstrate promise that a trained neural network can do a fabulous job at detecting fake news, but there are a few questions raised: how does our approach fair with other documented strategies? Is the system’s performance sufficient to justify its deployment? Let's find out!
 
 ## Relevant Considerations
 
