@@ -49,8 +49,6 @@ Our second classifier has the following components:
 * Two pairs of Long Short-Term Memory layers (equipped with 128 neurons to match the number of convolutional filters in previous layers) with each LSTM layer followed by a Dropout layer of 10%. Dropout values of 50-80% seem to be common, but in our experiments a Dropout of 10% yielded optimal results. 
 * Finally, a fully connected layer that uses the sigmoid activation function, outputting a single value between 0 and 1 to indicate the probability of an article's truthfulness. 
 
-*[Figures Page](https://chiralevy.github.io/cs152sp21-project/figures)*
-
 In regards to the training of the model, we use a binary cross-entropy to calculate loss and ADAM to handle optimization— an increasingly default setting for model training.
 
 ### Datasets
@@ -68,6 +66,8 @@ Our first dataset was composed of a total of 44,898 articles with meta-data such
 2. [Real News LDA Model](https://chiralevy.github.io/cs152sp21-project/lda-models/real_news_lda.html)
 3. [COVID Fake News LDA Model](https://chiralevy.github.io/cs152sp21-project/lda-models/covid_fake_news_lda.html)
 4. [COVID Real News LDA Model](https://chiralevy.github.io/cs152sp21-project/lda-models/covid_real_news_lda.html)
+
+---
 
 ### Understanding Latent Dirichlet Allocation Topic Modeling
 Latent Dirichlet Allocation (LDA) is one of many algorithms used to perform topic modeling. LDA's approach to is to simply consider each document as a collection of topics and each topic as a collection of keywords. Each keyword within in a topic contributes a certain weightage, or importance, to a topic and the number of topics to begin with is determined by the developer. Adjusting this number rearranges the topic distribution within documents and thereby the key word distribution within those topics.
@@ -104,11 +104,11 @@ In order to evaluate the performance of this model effectively, we split the dat
 
 Our two classifiers, though having different architectures, perform relatively the same with overall recorded accuracies of 99% each. With that said, while accuracy is a useful metric to assess the performance of a classifier, it fails to tell us how the model is performing relative to each class. To have a robust understanding of our classifiers' performance, we also created confusion matrices to understand the distribution of true positives, false positives, false negatives, and true negatives. 
 
-Model 1: 
+**Model 1**
 
 ![Image](https://chiralevy.github.io/cs152sp21-project/pictures/cnf1.png)
 
-Model 2:
+**Model 2**
 
 ![Image](https://chiralevy.github.io/cs152sp21-project/pictures/cnf2.png)
 
@@ -118,21 +118,21 @@ Both models had 1 false positives, meaning that they misclassified one fake news
 * Recall — the number of times a class was correctly predicted divided by the total number of samples with that class label in the testing data.
 * F1-Score — the harmonic mean of precision and recall.
 
-Model 1:
+**Model 1**
 
 ![Image](https://chiralevy.github.io/cs152sp21-project/pictures/class-rep-1.png)
 
-Model 2:
+**Model 2**
 
 ![Image](https://chiralevy.github.io/cs152sp21-project/pictures/class-rep-2.png)
 
 Based on these results, we can see that the models are nearly as good at detecting fake news correctly as it is at detecting real news correctly and achieved an overall accuracy of 99% on the validation data, which is pretty impressive. While the validation results can give us some indication of the model’s performance on unseen data, it is the testing set, which has not been touched at all during the model training process which provides the best objective and statistically correct measure of the model’s performance. 
 
-Model 1:
+**Model 1**
 
 ![Image](https://chiralevy.github.io/cs152sp21-project/pictures/testing-1.png)
 
-Model 2:
+**Model 2**
 
 ![Image](https://chiralevy.github.io/cs152sp21-project/pictures/testing-2.png)
 
@@ -145,31 +145,31 @@ The coherence of the LDA model for real news was 0.48 whereas the coherence for 
 
 Our two models for the COVID dataset achieved an overall accuracy of 92% and 93% (model 1 and model 2 respectively). Our distribution of true positives, false positives, false negatives, and true negatives for both models are as follows. 
 
-COVID Model 1: 
+**COVID Model 1**
 
 ![Image](https://chiralevy.github.io/cs152sp21-project/pictures/covid-cnf-1.png)
 
-COVID Model 2:
+**COVID Model 2**
 
 ![Image](https://chiralevy.github.io/cs152sp21-project/pictures/covid-cnf-2.png)
 
 Model 1 misclassified 33 real news articles as fake news and 247 fake news articles as real news. Conversely, model 2 misclassified 104 real news articles as fake news and 73 fake news articles as real news. It is quite curious how each had relatively more issues with the opposite type of news -- a repeated behavior in our iterations of rerunning the model. 
 
-COVID Model 1:
+**COVID Model 1**
 
 ![Image](https://chiralevy.github.io/cs152sp21-project/pictures/covid-cr-1.png)
 
-COVID Model 2:
+**COVID Model 2**
 
 ![Image](https://chiralevy.github.io/cs152sp21-project/pictures/covid-cr-2.png)
 
 Based on these results, we can see that the model is better at detecting fake news than real news. Model 2, on the other hand, is equally as good at detecting fake news correctly as it is at detecting real news correctly. This behavior with the validation data is reflected with the testing data:
 
-COVID Model 1:
+**COVID Model 1**
 
 ![Image](https://chiralevy.github.io/cs152sp21-project/pictures/covid-test-1.png)
 
-COVID Model 2:
+**COVID Model 2**
 
 ![Image](https://chiralevy.github.io/cs152sp21-project/pictures/covid-test-2.png)
 
@@ -189,11 +189,11 @@ Another dataset is Thorne et al.’s Fact Extraction and VERification (FEVER) da
 Another dataset is presented by Augenstein et al.. Their dataset consists of 34,918 claims from 26 English fact-checking websites. Each claim is accompanied by rich metadata and 10 evidence pages retrieved from Google search. Within each claim, entities such as people and places are also detected, disambiguated, and linked to their corresponding Wikipedia page.
 
 ### Other Fact-Checking Methods
-1. Claim Buster
+**Claim Buster**
 
 Although not a fully automated system, ClaimBuster is an ongoing project towards assisted fact- checking that determines check-worthy claims to ease the burden of human fact-checkers (Hassan et al. (2017)). ClaimBuster models the fact-checking task as a supervised 3-class classification problem, where outputs are used to rank which sentences are check-worthy. 30 features are selected with a random forest classifier from a pool of features: sentiment, length, word, and POS tag, and Entity Type. The classification task achieves 74% and the ranking portion achieves 96% accuracy with Support Vector Machine(SVM). ClaimBuster’s creator used it on the 2015 GOP debate and had a good overlap with sentences checked by PolitiFact, CNN, and FactCheck.org. Hassan et al. tests whether subjectivity analysis would be able to discern between non-factual sentences, defined as subjective sentences (e.g. opinions, beliefs), but found no improvements in experimental results. Furthermore, Hassan et al. provide the current status of ClaimBuster which consists of the following components: Claim Monitor, it continuously monitors and retrieves texts from a variety of different sources; Claim Matcher, it gives an important factual claim within a repository of fact-checked claims; Claim Checker, it collects supporting or debunking evidence from knowledge bases and the web given a claim; And Fact Check Reporter, it synthesizes a report by combining the aforementioned evidence and delivers it to users. Overall, ClaimBuster presents a number of tools that are of great interest to automated fact-checking and the overall domain of computational journalism.
 
-2. FakeBox
+**FakeBox**
 
 As of 2019, state-of-art fake news detector, Fakebox, does not include any sort of evidence seeking component (i.e. it does not provide evidence to back its assement of an article). Instead it analyzes linguistic characteristics of news articles from the headline to thecontent and inspects the site’s domain to compute a score (Zhou et al. (2019)). It reportedly achieves classification accuracy upwards of 95% (Zhou et al. (2019)). In their paper, Zhou et al. demonstrate how tampered real news articles can evade detection due to its stylistic resemblance to a real article. As a result, they propose evidence-based fact checking as a potential solution to address this vulnerability. 
 
@@ -201,7 +201,7 @@ In contrast to the above, Rashkin et al. label their work as political fact-chec
 
 What becomes clear is that although Fakebox achieved a high accuracy, sole reliance on linguistic characteristics and metadata comes with some flaws. Not only is the system susceptible to unintentional misinformation or machine generated fake news, but it also lacks the ability to justify its verdict of an article’s truthfulness.
 
-3. Evidence Awareness with FEVER
+**Evidence Awareness with FEVER**
 
 Alhindi et al. extend Liar by extracting human justifications from fact-checking articles associated with the claim, with all verdict-identifying words removed to prove that the lack of evidence used by humans to judge a claim limits the capabilities of data-driven approaches that train on it. In fact, their experimental results show that additional contextual evidence improves the fact-checking prediction accuracy, pushing the significance of incorporating evidence even further.
 
@@ -213,7 +213,7 @@ In the same year, Nie et al. present a system that placed first at the same FEVE
 
 More recently, Soleimani et al. proposed a fact-checking system that utilizes Bidirectional Encoder Representations from Transformers (BERT), one of the best pre-trained language models to date. The system consists of two BERT models: one for retrieving relevant evidence sentences and another for claim verification. In developing the models, the authors experiment with point-wise and pairwise approaches in finetuning BERT, and both outperform most existing systems in recall. In addition, they also examine the effect of Hard Negative Mining (HNM)in the evidence retrieval BERT model and found that it slightly improves the system’s performance. Through their experiments on the FEVER dataset, the pipeline achieves an almost-state-of-art FEVER score of 69.66.
 
-4. DREAM
+**DREAM**
 
 Zhong et al. presents the state-of-art fact checking model, abbreviated as “DREAM”, which achieves 70.60 FEVER score and 76.85% label accuracy. The DREAM system is able to do so because it utilizes a graph-based approach to connect and reason about multiple pieces of evidence. It shares the same 3-stage system components as the baseline proposed by Thorne et al.. Inter- estingly, the document retrieval component mostly follows Nie et al.’s approach, and the sentence selection component is framed as a semantic matching problem extending from pre-trained language models. What’s unique about their approach is the claim verification component. It uses semantic structures of the evidence instead of simple string or feature concatenation. In doing so, it adopts a graph structure to capture relative distances between words allowing it to measure how seman- tically related they are. Thereafter, it takes advantage of graph convolutional and graph attention networks to propagate and aggregate information on the graph. Despite the added layers, the model is not without any faults. In the error analysis, Zhong et al. list that the frequent sources of errors are failures to match different phrases that refer to the same thing in the particular context, and misleading evidences retrieved from the earlier stages. Nevertheless, DREAM’s performance suggests that graph-based approaches lead to some of the best performances among fact-checking systems.
 
@@ -221,11 +221,11 @@ What becomes clear is that the accuracy of a system is not enough to justify the
 
 
 ## Challenges
-1. A Twin Challenge
+**A Twin Challenge**
 
 Recently, Nakov et al. (2021) outline two challenges towards automated fact-checking: first, to develop practical tools to solve the problems trained fact-checkers face; second, to demonstrate the value of their tools to trained fact-checkers in their daily work. Fact-checking is not a straight- forward or routine process. It requires a series of steps that range from determining check-worthy claims to assessing the truthfulness of a claim. Nakov et al. lists that the areas where fact-checkers believe technology can help. They are: finding claims worth fact-checking, detecting previously fact-checked claims, evidence retrieval, and automated verification. Even though many tools have been developed to address these areas, there are still limitations to both the manual and automated process of fact-checking that warrant human fact-checkers’ apprehension. For automated systems, establishing credibility can prove problematic as some system’s do not always provide supporting evidence for their assessments. And for the manual task of fact-checking, scalability is a lingering issue. It is no surprise, then, that collaboration between professional fact-checkers and researchers is principal to the development of robust automated fact-checking systems. This bears relevant consideration as automated fact-checking tools and research expand, introducing new challenges and impacts on real-world fact-checking.
 
-2. Technological Limitations
+**Technological Limitations**
 
 Like most machine learning and deep learning models, most state-of-art fake news detection systems rely on data that could be easily converted into a vector and fed to the model such as metadata and word embeddings. However, this approach is vulnerable to certain types of fake news, such as machine-generated fake news due to their stylistic similarities to real news, as demonstrated by Schuster et al. and Zhou et al.. Because fact-checking attends to the truthfulness of a claim, sourcing relevant information from a repository is unavoidable. As is the case with the three-stage systems used by Thorne et al. and Nie et al., the system begins with document retrieval and end with fact verification, relying on very different techniques from various areas of computer science. Of interest is evidence retrieval which appears to be most problematic. This is evident in DREAM which achieves some of the best performance to date and helps identify poor performance in the evidence retrieval component(s) as a source of inaccuracies. Also noteworthy is that FEVER, the dataset used to evaluate DREAM, limits the justification for its assessment to sentences from Wikipedia. In doing so, the FEVER dataset controls the number of sources to pull from, and implicitly assumes that all sentences from Wikipedia can be trusted. This is much unlike the rationale produced by human fact-checkers. Therefore, expanding the knowledge base and classifying reliable sources are two more areas that fact-checking systems need to address before deployment.
 
