@@ -62,10 +62,10 @@ Our classifier was trained on a general dataset (the first linked dataset above)
 The bulk of our project attends to the first dataset enumerated in our "Datasets" section. To better understand our dataset, we think it is important to consider the distribution of fake news versus real news, the length of articles, and even the topic breakdown of the articles sourced from the datasets we selected for this project. Other metrics that allow us to understand topic coherence between real and fake news are Perplexity and Coherence. The former measures how probable new unseen data is given the model that was learned earlier. That is to say, how well does our model represent or reproduce the statistics of the held-out data. As a rule of thumb, a lower perplexity implies that data is more likely. The latter (Coherence) measures the degree of semantic similarity between high scoring words in a topic. Therefore, the higher the coherence the higher the semantic similarity between words. 
 
 Our first dataset was composed of a total of 44,898 articles with meta-data such as the title, topic, publishing date, and the corresponding label included. Within this data, there was a 1.1:1 ratio between real and fake news articles. Upon further inspection of the articles, we constructed a topic model using LDA. 
-1. [Fake News LDA Model](https://chiralevy.github.io/cs152sp21-project/lda-models/fake_news_lda.html)
-2. [Real News LDA Model](https://chiralevy.github.io/cs152sp21-project/lda-models/real_news_lda.html)
-3. [COVID Fake News LDA Model](https://chiralevy.github.io/cs152sp21-project/lda-models/covid_fake_news_lda.html)
-4. [COVID Real News LDA Model](https://chiralevy.github.io/cs152sp21-project/lda-models/covid_real_news_lda.html)
+1. [Fake News LDA Model](https://chiralevy.github.io/COVID-19-Media-Fact-Checker/lda-models/fake_news_lda.html)
+2. [Real News LDA Model](https://chiralevy.github.io/COVID-19-Media-Fact-Checke/lda-models/real_news_lda.html)
+3. [COVID Fake News LDA Model](https://chiralevy.github.io/COVID-19-Media-Fact-Checker/lda-models/covid_fake_news_lda.html)
+4. [COVID Real News LDA Model](https://chiralevy.github.io/COVID-19-Media-Fact-Checker/lda-models/covid_real_news_lda.html)
 
 ---
 
@@ -106,11 +106,11 @@ Our two classifiers, though having different architectures, perform relatively t
 
 **Model 1**
 
-![Image](https://chiralevy.github.io/cs152sp21-project/pictures/cnf1.png)
+![Image](https://chiralevy.github.io/COVID-19-Media-Fact-Checker/pictures/cnf1.png)
 
 **Model 2**
 
-![Image](https://chiralevy.github.io/cs152sp21-project/pictures/cnf2.png)
+![Image](https://chiralevy.github.io/COVID-19-Media-Fact-Checker/pictures/cnf2.png)
 
 Both models had 1 false positives, meaning that they misclassified one fake news article as real news. But they differed in their numbers of false negatives. The first model had 3, meaning that it misclassified 3 real news articles as fake news. The second model on the other hand had 8 false negatives. These behaviors were reflected in our classification report, which is a report that centered around a model's performance with respect to the validation set, and it also gives us the following metrics: 
 
@@ -120,21 +120,21 @@ Both models had 1 false positives, meaning that they misclassified one fake news
 
 **Model 1**
 
-![Image](https://chiralevy.github.io/cs152sp21-project/pictures/class-rep-1.png)
+![Image](https://chiralevy.github.io/COVID-19-Media-Fact-Checker/pictures/class-rep-1.png)
 
 **Model 2**
 
-![Image](https://chiralevy.github.io/cs152sp21-project/pictures/class-rep-2.png)
+![Image](https://chiralevy.github.io/COVID-19-Media-Fact-Checker/pictures/class-rep-2.png)
 
 Based on these results, we can see that the models are nearly as good at detecting fake news correctly as it is at detecting real news correctly and achieved an overall accuracy of 99% on the validation data, which is pretty impressive. While the validation results can give us some indication of the model’s performance on unseen data, it is the testing set, which has not been touched at all during the model training process which provides the best objective and statistically correct measure of the model’s performance. 
 
 **Model 1**
 
-![Image](https://chiralevy.github.io/cs152sp21-project/pictures/testing-1.png)
+![Image](https://chiralevy.github.io/COVID-19-Media-Fact-Checker/pictures/testing-1.png)
 
 **Model 2**
 
-![Image](https://chiralevy.github.io/cs152sp21-project/pictures/testing-2.png)
+![Image](https://chiralevy.github.io/COVID-19-Media-Fact-Checker/pictures/testing-2.png)
 
 Based on these results, our models for the general dataset indicate that both models are equally adept at detecting fake news and real news, both achieving an overall accuracy of 100% -- this is truly remarkable!
 
@@ -147,31 +147,31 @@ Our two models for the COVID dataset achieved an overall accuracy of 92% and 93%
 
 **COVID Model 1**
 
-![Image](https://chiralevy.github.io/cs152sp21-project/pictures/covid-cnf-1.png)
+![Image](https://chiralevy.github.io/COVID-19-Media-Fact-Checker/pictures/covid-cnf-1.png)
 
 **COVID Model 2**
 
-![Image](https://chiralevy.github.io/cs152sp21-project/pictures/covid-cnf-2.png)
+![Image](https://chiralevy.github.io/COVID-19-Media-Fact-Checker/pictures/covid-cnf-2.png)
 
 Model 1 misclassified 33 real news articles as fake news and 247 fake news articles as real news. Conversely, model 2 misclassified 104 real news articles as fake news and 73 fake news articles as real news. It is quite curious how each had relatively more issues with the opposite type of news -- a repeated behavior in our iterations of rerunning the model. 
 
 **COVID Model 1**
 
-![Image](https://chiralevy.github.io/cs152sp21-project/pictures/covid-cr-1.png)
+![Image](https://chiralevy.github.io/COVID-19-Media-Fact-Checker/pictures/covid-cr-1.png)
 
 **COVID Model 2**
 
-![Image](https://chiralevy.github.io/cs152sp21-project/pictures/covid-cr-2.png)
+![Image](https://chiralevy.github.io/COVID-19-Media-Fact-Checker/pictures/covid-cr-2.png)
 
 Based on these results, we can see that the model is better at detecting fake news than real news. Model 2, on the other hand, is equally as good at detecting fake news correctly as it is at detecting real news correctly. This behavior with the validation data is reflected with the testing data:
 
 **COVID Model 1**
 
-![Image](https://chiralevy.github.io/cs152sp21-project/pictures/covid-test-1.png)
+![Image](https://chiralevy.github.io/COVID-19-Media-Fact-Checker/pictures/covid-test-1.png)
 
 **COVID Model 2**
 
-![Image](https://chiralevy.github.io/cs152sp21-project/pictures/covid-test-2.png)
+![Image](https://chiralevy.github.io/COVID-19-Media-Fact-Checker/pictures/covid-test-2.png)
 
 Both models achieved an incredible overall accuracy,  89% and 93% (model 1 and 2 respectively). So, what is clear is that the results of our classifiers demonstrate promise that a trained neural network can do a fabulous job at detecting fake news, but there are a few questions raised: how does our approach fair with other documented strategies? Is the system’s performance sufficient to justify its deployment? Let's find out!
 
